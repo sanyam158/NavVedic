@@ -1,0 +1,239 @@
+.navbar {
+    background: linear-gradient(to right, #1fee64, #195237);
+    height: 130px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Adjust color */
+    padding: 10px 20px;
+    z-index: 1000; /* Ensures navbar stays above other elements */
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-right: 30px; /* Adjust as needed */
+}
+.navbar-nav .nav-link:hover {
+    color: #ffcc00 !important;
+}
+.dropdown-menu {
+    background: #51f151;
+}
+.dropdown-item:hover {
+    background: #169841;
+    color: white;
+}
+.search-box {
+    max-width: 250px;
+}
+/* About Us Section */
+.about-us {
+    text-align: center;
+    margin: 50px 0;
+    width: 100%;
+    background: linear-gradient(to right, #1fee64, #195237);
+    color:whitesmoke
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+.about-text {
+    padding: 20px;
+}
+/* Cards Section */
+.card {
+    transition: 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.bg-dark{
+
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f8b400;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #d99800;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    overflow-x: hidden;
+    background: linear-gradient(to right, #a5fdc3, #94f1b0);
+}
+img {
+    width: 100%;
+    height: 100%; /* Set a fixed height */
+    object-fit: cover; /* Options: contain, fill, none */
+  }
+  .card-img-top-logo{
+    width: 100%;
+    height: 250px;
+  }
+  .card-img-top{
+    width: 100%;
+    height: 100%;
+  }
+.hero {
+    width: 100%;
+    height: 100%;
+    /* background-size: cover; */
+    /* background: url('../images/BackgroundHome.webp') no-repeat center center/cover; */
+    /* display: flex; */
+    
+    align-items: center;
+    /* justify-content: center; */
+
+    text-align: center;
+   
+}
+.bgimage{
+    width: 100%;
+    height: 100%;
+}
+
+.aboutusimage{
+    width: 100%;
+    height: 100%;
+}
+.logo{
+    width: 170px;
+    height: 100px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.product-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Increased spacing between products */
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background: white;
+    padding: 20px; /* Increased padding for a bigger look */
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    height: 230px; /* Increased height of each product */
+}
+
+.product img {
+    width: 180px;  /* Slightly bigger image */
+    height: 200px;
+    border-radius: 5px;
+    margin-right: 25px; /* More spacing between image and text */
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h3 {
+    margin: 10px 0;
+    font-size: 22px;
+    color: #026e36; /* Dark attractive green */
+    /* font-family: 'Courier New', Courier, monospace; Stylish font */
+
+}
+
+
+.product-info p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5; /* Better readability */
+}
+/* @media (min-width: 600px) {
+            .product {
+                flex-direction: row;
+                max-width: 500px;
+                text-align: left;
+            }
+            .product img {
+                max-width: 150px;
+                margin-right: 15px;
+            }
+            .product-info {
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 599px) {
+            .product-info {
+                order: 1;
+            }
+        } */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.Footer {
+    width: 100%; /* Ensures full width */
+    background-color: #333; /* Dark background for contrast */
+    color: white; /* White text for readability */
+    text-align: center; /* Centered text */
+    padding: 20px 0; /* Padding for spacing */
+    position: relative; /* Default position */
+    bottom: 0;
+    left: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
