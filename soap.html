@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma Website</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../CSS/style.css">
+
+        
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Logo" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#AboutUs">About Us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="offeringsDropdown" role="button" data-bs-toggle="dropdown">
+                            Our Offerings
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="capsules.html">Tablets</a></li>
+                            <li><a class="dropdown-item" href="juice.html">Juices</a></li>
+                            <li><a class="dropdown-item" href="Syrup.html">Syrup</a></li>
+                            <li><a class="dropdown-item" href="soap.html">Soap</a></li>
+                            <li><a class="dropdown-item" href="Oil.html">Oil</a></li>
+                            <li><a class="dropdown-item" href="GoldMalt.html">Malt</a></li>
+                            <li><a class="dropdown-item" href="Drops.html">Drops</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Blog</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="index.html#Products">Product List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#footer">Contact Us</a></li>
+                </ul>
+                <form class="d-flex ms-3 search-box">
+                    <input class="form-control" type="search" placeholder="Search here">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Syrups Section -->
+    <section class="product-section">
+        <h2 class="">Our Soaps</h2>
+        <div class="product">
+            <img src="images/SOAP/NEEM ALOEVERA SOAP.jpg" alt="Product 1">
+            <div class="product-info">
+                <h3>Neem Aloevera Soap</h3>
+                <p><b>Price:</b>89<br><b>Packaging:</b>75 GM</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </section>
+    
+            <!-- Repeat similar blocks to make a total of 12 cards -->
+             <!-- Our Products Section (Carousel) -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Our Products</h2>
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                
+                <!-- First Slide (First 4 Products) -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/DIAB 50 CAPSULES.jpg" class="card-img-top" alt="Product 1">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 1</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/FEMVED CAPSULE.jpg" class="card-img-top" alt="Product 2">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 2</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/SYRUPS/HONEY ALL SYRUP.png" class="card-img-top" alt="Product 3">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 3</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/GOLD MALT/NAV VEDIC GOLD MALT.png" class="card-img-top" alt="Product 4">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 4</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Slide (Next 4 Products) -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/STONE SPLIT CAPSULES.jpg" class="card-img-top" alt="Product 5">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 5</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/OIL SECTION/PAIN-DEFEND ROLL ON.png" class="card-img-top" alt="Product 6">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 6</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/SOAP/NEEM ALOEVERA SOAP.jpg" class="card-img-top" alt="Product 7">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 7</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center p-3 shadow-sm">
+                                <img src="images/JUICES/ALOEVERA JUICE.jpg" class="card-img-top" alt="Product 8">
+                                <!-- <div class="card-body">
+                                    <h5 class="card-title">Product 8</h5>
+                                    <a href="#" class="btn btn-primary">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+<!-- Why Choose Us Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Why Choose Us</h2>
+    <div class="row align-items-center">
+        
+        <!-- Left Section: Image -->
+        <div class="col-md-6">
+            <img src="images/ChooseUs.webp" class="img-fluid rounded shadow" alt="Why Choose Us">
+        </div>
+
+        <!-- Right Section: Description Points -->
+        <div class="col-md-6">
+            <h3 class="mb-3">We Provide the Best Healthcare Solutions</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>✔ High-Quality Medicines:</b> Manufactured under strict quality standards.</li>
+                <li class="list-group-item"><b>✔ Affordable Pricing:</b> Premium products at competitive prices.</li>
+                <li class="list-group-item"><b>✔ Advanced Research:</b> Cutting-edge technology and innovation.</li>
+                <li class="list-group-item"><b>✔ Trusted by Professionals:</b> Recommended by doctors and experts.</li>
+                <li class="list-group-item"><b>✔ Customer-Centric Approach:</b> Ensuring your health and satisfaction.</li>
+                <li class="list-group-item"><b>✔ Fast & Reliable Delivery:</b> Get your medicines on time, every time.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- Excellence is a Matter of Fact Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Excellence is a Matter of Fact</h2>
+    <div class="row text-center">
+        
+        <!-- Card 1: Happy Clients -->
+        <div class="col-md-3">
+            <div class="card shadow-sm p-4">
+                <div class="card-body">
+                    <i class="fas fa-smile fa-3x text-primary mb-3"></i>
+                    <h3>500+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Unique Formulations -->
+        <div class="col-md-3">
+            <div class="card shadow-sm p-4">
+                <div class="card-body">
+                    <i class="fas fa-flask fa-3x text-success mb-3"></i>
+                    <h3>200+</h3>
+                    <p>Unique Formulations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Visitors -->
+        <div class="col-md-3">
+            <div class="card shadow-sm p-4">
+                <div class="card-body">
+                    <i class="fas fa-users fa-3x text-danger mb-3"></i>
+                    <h3>35,000+</h3>
+                    <p>Visitors</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Operational Cities -->
+        <div class="col-md-3">
+            <div class="card shadow-sm p-4">
+                <div class="card-body">
+                    <i class="fas fa-city fa-3x text-warning mb-3"></i>
+                    <h3>250+</h3>
+                    <p>Operational Cities</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>
+<br>
+<!-- Full-Width Footer -->
+<footer class="bg-dark text-white pt-5 pb-4">
+    <div id="footer"></div><div class="container-fluid"> <!-- Changed to Full-Width -->
+        <div class="row px-5"> <!-- Added padding for better spacing -->
+            <!-- FIND US -->
+            <div class="col-md-4">
+                <h5 class="fw-bold">FIND US</h5>
+                <p>Nav Vedic Herbals is a leading pharmaceutical company based in Pan India, handling a wide range of products.</p>
+                <p><i class="fas fa-phone-alt"></i> +91 8607650047</p>
+                <p><i class="fas fa-envelope"></i> www.navvedicherbals.in</p>
+                <p><i class="fas fa-map-marker-alt"></i> Barak no. 13, 1st Floor, Opposite Government School, Camp, Yamunanagar (Haryana)</p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="col-md-4">
+                <!-- <h5 class="fw-bold">QUICK LINKS</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Contact Us</a></li>
+                    <li><a href="#" class="text-white">Quality</a></li>
+                    <li><a href="#" class="text-white">Pharma Franchise</a></li>
+                    <li><a href="#" class="text-white">Blog</a></li>
+                    <li><a href="#" class="text-white">Privacy Policy</a></li>
+                </ul> -->
+            </div>
+
+            <!-- REACH US -->
+            <div class="col-md-4">
+                <h5 class="fw-bold">REACH US</h5>
+                <form>
+                    <input type="text" class="form-control mb-2" placeholder="Name">
+                    <input type="email" class="form-control mb-2" placeholder="Email">
+                    <input type="text" class="form-control mb-2" placeholder="Contact No.">
+                    <input type="text" class="form-control mb-2" placeholder="Location">
+                    <textarea class="form-control mb-2" placeholder="Message"></textarea>
+                    <button class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        
+        <!-- COPYRIGHT -->
+        <div class="text-center mt-3 py-3 bg-secondary">
+            <p class="mb-0">© 2022 Navvedic Herbals. All Rights Reserved | Developed By <strong><a href="linkedin.com/in/aagam-bathla-444777216" class="text-white">Aagam Bathla</a></strong></p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
