@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nav Vedic Herbals | Gold Malt</title>
-    <meta name="description" content="Our Malt by Nav Vedic Herbals. Explore formulations, packaging, and pricing details.">
+    <meta name="description" content="Our Malt by Nav Vedic Herbals. Explore product options, pricing, and packaging details.">
+    <meta name="theme-color" content="#0f5440">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body data-page="malt">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="top-strip" role="region" aria-label="Quick trust and contact information">
+        <div class="container">
+            <div class="top-strip-left">
+                <span class="top-pill">GMP-aligned quality practices</span>
+                <span class="top-pill">Ayurvedic and herbal formulations</span>
+            </div>
+            <div class="top-strip-right">
+                <a href="tel:+918607650047" aria-label="Call Nav Vedic Herbals">Call: +91 8607650047</a>
+                <a href="https://wa.me/918607650047" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp Support</a>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="images/logo-clean.png" alt="Nav Vedic Herbals Logo" class="logo"></a>
@@ -42,44 +56,80 @@
         </div>
     </nav>
 
-    <section class="product-section">
-        <h2>Our Malt</h2>
-        <p class="section-subtitle">Nutritional malt blend to support balanced daily nourishment.</p>
-        <div class="product">
-            <img src="images/GOLD MALT/NAV VEDIC GOLD MALT.png" alt="Nav Vedic Gold Malt">
-            <div class="product-info">
-                <h3>Nav Vedic Gold Malt</h3>
-                <p><b>Price:</b>380<br><b>Packaging:</b>500 GM WITH METALLIC CARTON</p>
-                <button type="button">Buy Now</button>
+    <section class="page-hero" aria-label="Gold Malt page introduction">
+        <div class="page-hero-inner">
+            <div>
+                <p class="page-kicker">Nutrition Blend</p>
+                <h1>Gold Malt</h1>
+                <p>Easy-to-use malt product for regular nourishment routines.</p>
+                <p class="page-breadcrumb"><a href="index.html">Home</a> / Gold Malt</p>
+            </div>
+            <div class="page-hero-actions">
+                <a href="tel:+918607650047" class="btn btn-primary">Call for Details</a>
+                <a href="#footer" class="btn btn-outline-brand">Request Callback</a>
             </div>
         </div>
     </section>
 
-    <section class="quick-trust">
-        <div class="quick-trust-grid">
-            <article class="quick-trust-item">
-                <h4>Quality Focused</h4>
-                <p>Manufactured with strict quality standards and careful ingredient selection.</p>
+    <main id="main-content">
+        <section class="product-section">
+            <div class="product-section-head">
+                <h2>Our Malt</h2>
+                <p class="section-subtitle">Nutritional malt blend crafted for balanced nourishment and energy support.</p>
+            </div>
+            <div class="product-controls">
+                <span class="product-count" data-product-count> products</span>
+                <label class="sort-wrap" for="productSort">Sort by
+                    <select id="productSort" class="product-sort" aria-label="Sort products">
+                        <option value="default">Recommended</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                    </select>
+                </label>
+            </div>
+            <div class="product-grid" data-product-grid>
+            <article class="product" data-product-card>
+                <img src="images/GOLD MALT/NAV VEDIC GOLD MALT.png" alt="Nav Vedic Gold Malt" loading="lazy">
+                <div class="product-info">
+                    <h3>Nav Vedic Gold Malt</h3>
+                    <p><b>Price:</b>380<br><b>Packaging:</b>500 GM WITH METALLIC CARTON</p>
+                    <button type="button">Buy Now</button>
+                </div>
             </article>
-            <article class="quick-trust-item">
-                <h4>Transparent Packaging</h4>
-                <p>Each listing clearly shows price and pack size for easier purchase decisions.</p>
-            </article>
-            <article class="quick-trust-item">
-                <h4>Easy Enquiry</h4>
-                <p>Use the Buy Now button to prefill your enquiry and connect with our team faster.</p>
-            </article>
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <section class="medical-note" aria-label="Medical notice">
+            <p><strong>Important:</strong> Product information is for general wellness awareness. Please consult a qualified healthcare professional for diagnosis, prescription, or condition-specific medical advice.</p>
+        </section>
+
+        <section class="quick-trust">
+            <div class="quick-trust-grid">
+                <article class="quick-trust-item">
+                    <h4>Quality Focused</h4>
+                    <p>Manufactured with strict quality controls and careful ingredient selection.</p>
+                </article>
+                <article class="quick-trust-item">
+                    <h4>Transparent Details</h4>
+                    <p>Every product clearly displays pricing and packaging for easy comparisons.</p>
+                </article>
+                <article class="quick-trust-item">
+                    <h4>Fast Support</h4>
+                    <p>Use Buy Now or contact options to get assistance from our team quickly.</p>
+                </article>
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">
         <div id="footer" class="Footer">
             <div class="row px-3 px-md-4">
                 <div class="col-md-5">
                     <h5 class="fw-bold">Find Us</h5>
-                    <p>Nav Vedic Herbals is a leading herbal healthcare brand across India, offering a wide range of wellness products.</p>
-                    <p><strong>Phone:</strong> +91 8607650047</p>
-                    <p><strong>Website:</strong> www.navvedicherbals.in</p>
+                    <p>Nav Vedic Herbals is a trusted herbal healthcare brand across India, offering practical wellness solutions for daily life.</p>
+                    <p><strong>Phone:</strong> <a href="tel:+918607650047">+91 8607650047</a></p>
+                    <p><strong>Website:</strong> <a href="https://www.navvedicherbals.in" target="_blank" rel="noopener">www.navvedicherbals.in</a></p>
                     <p><strong>Address:</strong> Barak no. 13, 1st Floor, Opposite Government School, Camp, Yamunanagar (Haryana)</p>
                 </div>
                 <div class="col-md-3">
@@ -92,11 +142,11 @@
                 <div class="col-md-4">
                     <h5 class="fw-bold">Reach Us</h5>
                     <form>
-                        <input type="text" class="form-control mb-2" placeholder="Name" aria-label="Name">
-                        <input type="email" class="form-control mb-2" placeholder="Email" aria-label="Email">
-                        <input type="text" class="form-control mb-2" placeholder="Contact No." aria-label="Contact number">
+                        <input type="text" class="form-control mb-2" placeholder="Name" aria-label="Name" required>
+                        <input type="email" class="form-control mb-2" placeholder="Email" aria-label="Email" required>
+                        <input type="text" class="form-control mb-2" placeholder="Contact No." aria-label="Contact number" required>
                         <input type="text" class="form-control mb-2" placeholder="Location" aria-label="Location">
-                        <textarea class="form-control mb-2" placeholder="Message" rows="3" aria-label="Message"></textarea>
+                        <textarea class="form-control mb-2" placeholder="Message" rows="3" aria-label="Message" required></textarea>
                         <button type="submit" class="btn btn-primary w-100">Submit Enquiry</button>
                     </form>
                 </div>
@@ -110,6 +160,4 @@
     <script src="scripts/main.js"></script>
 </body>
 </html>
-
-
 

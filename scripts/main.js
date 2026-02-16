@@ -1,7 +1,17 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
-    // Highlight active nav link.
+    const updateProductCount = (cards) => {
+        const countEl = document.querySelector('[data-product-count]');
+        if (!countEl || !cards) {
+            return;
+        }
+
+        const visibleCount = cards.filter((card) => card.style.display !== 'none').length;
+        countEl.textContent = `${visibleCount} product${visibleCount === 1 ? '' : 's'}`;
+    };
+
+    // Highlight active nav links.
     document.querySelectorAll('.navbar .nav-link').forEach((link) => {
         const href = (link.getAttribute('href') || '').toLowerCase();
         if (!href || href.startsWith('#')) {
@@ -10,7 +20,6 @@
 
         const targetPage = href.split('#')[0] || 'index.html';
         const isHome = currentPage === '' || currentPage === 'index.html';
-
         if ((isHome && targetPage === 'index.html' && href === 'index.html') || targetPage === currentPage) {
             link.classList.add('active-page');
         }
@@ -32,10 +41,72 @@
         }
     });
 
-    const searchInput = document.querySelector('.search-box input[type="search"]');
-    const productCards = Array.from(document.querySelectorAll('.product-section .product'));
+    const productGrid = document.querySelector('[data-product-grid]');
+    const productCards = Array.from(document.querySelectorAll('[data-product-card], .product-section .product'));
     const categoryCards = Array.from(document.querySelectorAll('#Products .card'));
 
+    // Add product chips and metadata for sorting.
+    if (productCards.length > 0) {
+        productCards.forEach((card) => {
+            const info = card.querySelector('.product-info');
+            const metaText = info?.querySelector('p')?.textContent || '';
+            const priceMatch = metaText.match(/price\s*:\s*(\d+(?:\.\d+)?)/i);
+            const packMatch = metaText.match(/packaging\s*:\s*([^\n]+)/i);
+
+            const priceValue = priceMatch ? Number.parseFloat(priceMatch[1]) : Number.POSITIVE_INFINITY;
+            card.dataset.price = Number.isFinite(priceValue) ? String(priceValue) : '';
+            card.dataset.name = (info?.querySelector('h3')?.textContent || '').trim().toLowerCase();
+
+            if (info && !info.querySelector('.product-badges') && (priceMatch || packMatch)) {
+                const badgeWrap = document.createElement('div');
+                badgeWrap.className = 'product-badges';
+
+                if (priceMatch) {
+                    const priceChip = document.createElement('span');
+                    priceChip.className = 'meta-chip price';
+                    priceChip.textContent = `Price: INR ${priceMatch[1]}`;
+                    badgeWrap.appendChild(priceChip);
+                }
+
+                if (packMatch) {
+                    const packChip = document.createElement('span');
+                    packChip.className = 'meta-chip pack';
+                    packChip.textContent = `Pack: ${packMatch[1].trim()}`;
+                    badgeWrap.appendChild(packChip);
+                }
+
+                info.insertBefore(badgeWrap, info.querySelector('p'));
+            }
+        });
+
+        updateProductCount(productCards);
+    }
+
+    // Product sorting controls.
+    const sortSelect = document.querySelector('.product-sort');
+    const defaultOrder = productCards.slice();
+    if (sortSelect && productGrid && productCards.length > 0) {
+        sortSelect.addEventListener('change', (event) => {
+            const mode = event.target.value;
+            const sorted = productCards.slice();
+
+            if (mode === 'price-low') {
+                sorted.sort((a, b) => (Number.parseFloat(a.dataset.price || 'Infinity') - Number.parseFloat(b.dataset.price || 'Infinity')));
+            } else if (mode === 'price-high') {
+                sorted.sort((a, b) => (Number.parseFloat(b.dataset.price || '-Infinity') - Number.parseFloat(a.dataset.price || '-Infinity')));
+            } else if (mode === 'name-asc') {
+                sorted.sort((a, b) => (a.dataset.name || '').localeCompare(b.dataset.name || ''));
+            } else {
+                defaultOrder.forEach((card) => productGrid.appendChild(card));
+                return;
+            }
+
+            sorted.forEach((card) => productGrid.appendChild(card));
+        });
+    }
+
+    // Search behavior.
+    const searchInput = document.querySelector('.search-box input[type="search"]');
     if (searchInput && (productCards.length > 0 || categoryCards.length > 0)) {
         const emptyState = document.createElement('p');
         emptyState.className = 'section-subtitle search-empty-state';
@@ -54,13 +125,14 @@
             if (productCards.length > 0) {
                 productCards.forEach((card) => {
                     const name = (card.querySelector('h3')?.textContent || '').toLowerCase();
-                    const details = (card.querySelector('p')?.textContent || '').toLowerCase();
+                    const details = (card.querySelector('.product-info p')?.textContent || '').toLowerCase();
                     const isVisible = !query || name.includes(query) || details.includes(query);
                     card.style.display = isVisible ? '' : 'none';
                     if (isVisible) {
                         visibleCount += 1;
                     }
                 });
+                updateProductCount(productCards);
             }
 
             if (categoryCards.length > 0) {
@@ -113,6 +185,24 @@
                 submitBtn.textContent = originalLabel;
             }, 2200);
         });
+    });
+
+    // Add floating quick-contact actions.
+    if (!document.querySelector('.floating-actions')) {
+        const quickActions = document.createElement('div');
+        quickActions.className = 'floating-actions';
+        quickActions.innerHTML = `
+            <a class="floating-action call" href="tel:+918607650047" aria-label="Call Nav Vedic Herbals">Call Now</a>
+            <a class="floating-action chat" href="https://wa.me/918607650047" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+        `;
+        document.body.appendChild(quickActions);
+    }
+
+    // Lazy-load non-hero images that do not already define loading behavior.
+    document.querySelectorAll('img').forEach((img) => {
+        if (!img.classList.contains('bgimage') && !img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
     });
 
     // Back-to-top control.
