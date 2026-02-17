@@ -772,6 +772,181 @@ button:hover {
     margin-top: 0.5rem;
 }
 
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 2000;
+    background: rgba(15, 84, 64, 0.16);
+    pointer-events: none;
+}
+
+.scroll-progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #2da97f, #d16c2e);
+    transition: width 120ms linear;
+}
+
+.filter-chip-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.filter-chip {
+    border: 1px solid #8faea1;
+    background: #e7f3ed;
+    color: #1a5b47;
+    border-radius: 999px;
+    padding: 0.36rem 0.74rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: none;
+}
+
+.filter-chip:hover {
+    transform: none;
+    background: #d9ebe2;
+    border-color: #6a9684;
+}
+
+.filter-chip.is-active {
+    color: #ffffff;
+    border-color: transparent;
+    background: linear-gradient(125deg, #2da97f, #137558);
+    box-shadow: 0 8px 16px rgba(19, 117, 88, 0.25);
+}
+
+.process-shell {
+    margin-top: 2.4rem;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.95rem;
+}
+
+.process-step {
+    background: linear-gradient(160deg, #ecf7f2, #dcece4);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+    padding: 1rem;
+}
+
+.process-step-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 999px;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2da97f, #147355);
+    margin-bottom: 0.45rem;
+}
+
+.process-step h3 {
+    font-size: 1.02rem;
+    color: var(--brand-700);
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+}
+
+.process-step p {
+    margin: 0;
+    color: var(--ink-700);
+    font-size: 0.92rem;
+}
+
+.reach-shell .reach-grid {
+    row-gap: 0.8rem;
+}
+
+.reach-card .card-body {
+    gap: 0.25rem;
+}
+
+.reach-card h3 {
+    color: var(--brand-700);
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    margin-bottom: 0.25rem;
+    font-weight: 800;
+}
+
+.reach-card p {
+    margin: 0;
+    color: var(--ink-700);
+    font-weight: 600;
+}
+
+.order-modal .modal-content {
+    border: 1px solid #9ec2b3;
+    border-radius: 16px;
+    background: linear-gradient(165deg, #eef7f2, #dcece5);
+    box-shadow: var(--shadow-strong);
+}
+
+.order-modal .modal-header {
+    border-bottom: 1px solid #b9d3c8;
+}
+
+.order-modal .modal-title {
+    color: var(--brand-700);
+    font-family: 'DM Serif Display', serif;
+}
+
+.order-modal-product {
+    font-weight: 800;
+    color: var(--ink-900);
+    margin-bottom: 0.22rem;
+}
+
+.order-modal-meta {
+    margin-bottom: 0.5rem;
+    color: var(--ink-700);
+    font-size: 0.92rem;
+}
+
+.order-modal-note {
+    margin-bottom: 0.7rem;
+    color: var(--ink-700);
+    font-size: 0.9rem;
+}
+
+.order-modal-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.btn.btn-soft {
+    border: 1px solid #8faea1;
+    color: #144f3d;
+    background: #e2f2eb;
+    box-shadow: none;
+}
+
+.btn.btn-soft:hover {
+    transform: translateY(-1px);
+    background: #d5e9df;
+}
+
+.form-feedback {
+    margin: 0.4rem 0 0;
+    font-size: 0.86rem;
+    color: #bff0e0;
+    font-weight: 700;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
     width: 5%;
@@ -1077,6 +1252,10 @@ body.motion-enabled .page-hero-inner {
     .cta-band .btn {
         width: fit-content;
     }
+
+    .order-modal-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
@@ -1113,6 +1292,10 @@ body.motion-enabled .page-hero-inner {
     .sort-wrap {
         width: 100%;
         justify-content: space-between;
+    }
+
+    .filter-chip-wrap {
+        width: 100%;
     }
 
     .product-sort {
@@ -1183,6 +1366,14 @@ body.motion-enabled .page-hero-inner {
         min-width: 88px;
         height: 35px;
         font-size: 0.76rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-modal-actions {
+        grid-template-columns: 1fr;
     }
 
 }
