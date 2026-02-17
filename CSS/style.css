@@ -15,6 +15,9 @@
     --line: #b8d0c4;
     --shadow-soft: 0 14px 35px rgba(16, 53, 43, 0.08);
     --shadow-strong: 0 20px 45px rgba(9, 43, 34, 0.18);
+    --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur-fast: 180ms;
+    --dur-med: 460ms;
 }
 
 * {
@@ -107,7 +110,7 @@ body > div:empty {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    background: rgba(255, 255, 255, 0.11);
+    background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 999px;
     padding: 0.18rem 0.65rem;
@@ -397,7 +400,7 @@ body > div:empty {
     border-radius: 16px;
     background: linear-gradient(160deg, #eff8f3, #e4f0ea);
     box-shadow: var(--shadow-soft);
-    transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
     height: 100%;
 }
 
@@ -441,7 +444,7 @@ button {
     font-weight: 700;
     letter-spacing: 0.01em;
     padding: 0.55rem 1.15rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard), opacity var(--dur-fast) var(--ease-standard);
 }
 
 .btn.btn-primary,
@@ -946,6 +949,40 @@ footer a {
     transform: translateY(-1px);
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity var(--dur-med) var(--ease-standard),
+        transform var(--dur-med) var(--ease-standard);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes softFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.motion-enabled .hero-overlay {
+    animation: softFadeUp 760ms var(--ease-standard) both;
+}
+
+body.motion-enabled .page-hero-inner {
+    animation: softFadeUp 720ms var(--ease-standard) both;
+}
+
 .back-to-top {
     position: fixed;
     right: 1rem;
@@ -968,6 +1005,26 @@ footer a {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 @media (max-width: 992px) {
